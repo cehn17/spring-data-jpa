@@ -11,30 +11,29 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CreateProductHandler implements RequestHandler<CreateProductRequest,Void> {
+public class CreateProductHandler implements RequestHandler<CreateProductRequest,CreateProductResponse> {
 
     private final ProductRepository productRepository;
     private final FileUtils fileUtils;
 
     @Override
-    public Void handle(CreateProductRequest request) {
+    public CreateProductResponse handle(CreateProductRequest request) {
 
-        log.info("Received request with id {}", request.getId());
+        log.info("Creating Product");
 
         String uniqueFileName = fileUtils.saveProductImage(request.getFile());
 
         Product product = Product.builder()
-                .id(request.getId())
                 .name(request.getName())
                 .description(request.getDescription())
                 .price(request.getPrice())
                 .image(uniqueFileName)
                 .build();
-        productRepository.upsert(product);
+        Product storedProduct = productRepository.upsert(product);
 
-        log.info("Saved product with id {}" ,product.getId());
+        log.info("Saved product with id {}" , storedProduct.getId());
 
-        return null;
+        return new CreateProductResponse(storedProduct);
 
     }
 

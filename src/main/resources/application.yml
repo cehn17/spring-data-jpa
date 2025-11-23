@@ -1,5 +1,5 @@
 spring:
   application:
-    name: curso-spring-web
+    name: spring-data-jpa
   profiles:
     active: dev
