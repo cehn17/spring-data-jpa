@@ -1,6 +1,6 @@
 package com.cehn17.spring.data.jpa.product.application.command.update;
 
-import com.cehn17.spring.data.jpa.common.mediator.Request;
+import com.cehn17.spring.data.jpa.common.application.mediator.Request;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 

@@ -1,6 +1,6 @@
 package com.cehn17.spring.data.jpa.product.application.command.delete;
 
-import com.cehn17.spring.data.jpa.common.mediator.RequestHandler;
+import com.cehn17.spring.data.jpa.common.application.mediator.RequestHandler;
 import com.cehn17.spring.data.jpa.product.domain.port.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

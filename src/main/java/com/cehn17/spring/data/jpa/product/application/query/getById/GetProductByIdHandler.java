@@ -1,6 +1,6 @@
 package com.cehn17.spring.data.jpa.product.application.query.getById;
 
-import com.cehn17.spring.data.jpa.common.mediator.RequestHandler;
+import com.cehn17.spring.data.jpa.common.application.mediator.RequestHandler;
 import com.cehn17.spring.data.jpa.product.domain.entity.Product;
 import com.cehn17.spring.data.jpa.product.domain.exception.ProductNotFoundException;
 import com.cehn17.spring.data.jpa.product.domain.port.ProductRepository;

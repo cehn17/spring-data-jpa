@@ -1,6 +1,7 @@
 package com.cehn17.spring.data.jpa.product.application.query.getAll;
 
-import com.cehn17.spring.data.jpa.common.mediator.RequestHandler;
+import com.cehn17.spring.data.jpa.common.application.mediator.RequestHandler;
+import com.cehn17.spring.data.jpa.common.domain.PaginationResult;
 import com.cehn17.spring.data.jpa.product.domain.entity.Product;
 import com.cehn17.spring.data.jpa.product.domain.port.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class GetAllProductHandler implements RequestHandler<GetAllProductRequest
 
         log.info("Getting all products");
 
-        List<Product> products = productRepository.findAll();
+        PaginationResult<Product> products = productRepository.findAll(request.getPaginationQuery());
 
         log.info("Products found: {}", products);
 

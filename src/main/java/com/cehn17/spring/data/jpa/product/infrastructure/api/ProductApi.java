@@ -1,5 +1,6 @@
 package com.cehn17.spring.data.jpa.product.infrastructure.api;
 
+import com.cehn17.spring.data.jpa.common.domain.PaginationResult;
 import com.cehn17.spring.data.jpa.product.infrastructure.api.dto.CreateProductDto;
 import com.cehn17.spring.data.jpa.product.infrastructure.api.dto.ProductDto;
 import com.cehn17.spring.data.jpa.product.infrastructure.api.dto.UpdateProductDto;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public interface ProductApi {
 
-    public ResponseEntity<List<ProductDto>> getAllProducts(@RequestParam(required = false) String pageSize);
+    public ResponseEntity<PaginationResult<ProductDto>> getAllProducts(int pageNumber, int pageSize);
 
     public ResponseEntity<ProductDto> getProductById(@PathVariable Long id);
 

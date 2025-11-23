@@ -1,4 +1,4 @@
-package com.cehn17.spring.data.jpa.common.mediator;
+package com.cehn17.spring.data.jpa.common.application.mediator;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;

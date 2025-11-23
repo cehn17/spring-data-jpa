@@ -1,4 +1,4 @@
-package com.cehn17.spring.data.jpa.common.util;
+package com.cehn17.spring.data.jpa.common.infrastructure.config.util;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

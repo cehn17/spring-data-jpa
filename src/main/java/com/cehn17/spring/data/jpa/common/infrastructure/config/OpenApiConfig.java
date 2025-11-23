@@ -1,4 +1,4 @@
-package com.cehn17.spring.data.jpa.common.config;
+package com.cehn17.spring.data.jpa.common.infrastructure.config;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;

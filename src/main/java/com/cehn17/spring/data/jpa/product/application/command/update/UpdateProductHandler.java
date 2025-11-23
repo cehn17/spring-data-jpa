@@ -1,7 +1,7 @@
 package com.cehn17.spring.data.jpa.product.application.command.update;
 
-import com.cehn17.spring.data.jpa.common.mediator.RequestHandler;
-import com.cehn17.spring.data.jpa.common.util.FileUtils;
+import com.cehn17.spring.data.jpa.common.application.mediator.RequestHandler;
+import com.cehn17.spring.data.jpa.common.infrastructure.config.util.FileUtils;
 import com.cehn17.spring.data.jpa.product.domain.entity.Product;
 import com.cehn17.spring.data.jpa.product.domain.port.ProductRepository;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.cehn17.spring.data.jpa.common.config;
+package com.cehn17.spring.data.jpa.common.infrastructure.config;
 
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.cehn17.spring.data.jpa.common.exceptions;
+package com.cehn17.spring.data.jpa.common.infrastructure.config.exceptions;
 
 import lombok.Data;
 

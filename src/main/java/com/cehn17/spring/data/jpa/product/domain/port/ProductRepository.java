@@ -1,5 +1,7 @@
 package com.cehn17.spring.data.jpa.product.domain.port;
 
+import com.cehn17.spring.data.jpa.common.domain.PaginationQuery;
+import com.cehn17.spring.data.jpa.common.domain.PaginationResult;
 import com.cehn17.spring.data.jpa.product.domain.entity.Product;
 
 import java.util.List;
@@ -11,7 +13,7 @@ public interface ProductRepository {
 
     Optional<Product> findById(Long id);
 
-    List<Product> findAll();
+    PaginationResult<Product> findAll(PaginationQuery paginationQuery);
 
     void deleteById(Long id);
 }

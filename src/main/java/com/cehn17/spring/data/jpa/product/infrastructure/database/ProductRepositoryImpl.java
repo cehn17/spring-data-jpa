@@ -1,5 +1,7 @@
 package com.cehn17.spring.data.jpa.product.infrastructure.database;
 
+import com.cehn17.spring.data.jpa.common.domain.PaginationQuery;
+import com.cehn17.spring.data.jpa.common.domain.PaginationResult;
 import com.cehn17.spring.data.jpa.product.domain.entity.Product;
 import com.cehn17.spring.data.jpa.product.domain.port.ProductRepository;
 import com.cehn17.spring.data.jpa.product.infrastructure.database.entity.ProductEntity;
@@ -8,6 +10,8 @@ import com.cehn17.spring.data.jpa.product.infrastructure.database.repository.Que
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -38,9 +42,18 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
-    public List<Product> findAll() {
+    public PaginationResult<Product> findAll(PaginationQuery paginationQuery) {
+        PageRequest pageRequest = PageRequest.of(paginationQuery.getPage(), paginationQuery.getSize());
 
-        return repository.findAll().stream().map(productEntityMapper::mapToProduct).toList();
+        Page<ProductEntity> page = repository.findAll(pageRequest);
+
+        return new PaginationResult<>(
+                page.getContent().stream().map(productEntityMapper::mapToProduct).toList(),
+                page.getNumber(),
+                page.getSize(),
+                page.getTotalPages(),
+                page.getTotalElements()
+        );
     }
 
     @Override
