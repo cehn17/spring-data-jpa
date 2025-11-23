@@ -15,7 +15,7 @@ import java.util.Optional;
 
 
 @Repository
-public interface QueryProductRepository extends JpaRepository<ProductEntity, Long> {
+public interface QueryProductRepository extends JpaRepository<ProductEntity, Long>, JpaSpecificationExecutor<ProductEntity> {
     Optional<ProductEntity> findByNameContaining(String name);
 
     List<ProductEntity> findAllByPriceBetween(Double priceStart, Double priceEnd);
@@ -36,7 +36,7 @@ public interface QueryProductRepository extends JpaRepository<ProductEntity, Lon
 
     Page<ProductEntity> findAll(Specification<ProductEntity> specification, Pageable pageable);
 
-    @EntityGraph(attributePaths = {"productDetail", "reviews", "categories"})
-    Optional<ProductEntity> findById(Long id);
+    //@EntityGraph(attributePaths = {"productDetail", "reviews", "categories"})
+    //Optional<ProductEntity> findById(Long id);
 
 }

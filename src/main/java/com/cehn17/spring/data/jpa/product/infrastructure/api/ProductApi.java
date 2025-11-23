@@ -13,7 +13,16 @@ import java.util.List;
 
 public interface ProductApi {
 
-    public ResponseEntity<PaginationResult<ProductDto>> getAllProducts(int pageNumber, int pageSize, String sortBy, String direction);
+    public ResponseEntity<PaginationResult<ProductDto>> getAllProducts(
+            int pageNumber,
+            int pageSize,
+            String sortBy,
+            String direction,
+            String name,
+            String description,
+            Double priceMin,
+            Double priceMax
+    );
 
     public ResponseEntity<ProductDto> getProductById(@PathVariable Long id);
 

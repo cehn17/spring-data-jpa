@@ -22,7 +22,7 @@ public class GetAllProductHandler implements RequestHandler<GetAllProductRequest
 
         log.info("Getting all products");
 
-        PaginationResult<Product> products = productRepository.findAll(request.getPaginationQuery());
+        PaginationResult<Product> products = productRepository.findAll(request.getPaginationQuery(), request.getProductFilter());
 
         log.info("Products found: {}", products);
 
