@@ -1,5 +1,6 @@
 package com.cehn17.spring.data.jpa.product.infrastructure.database.entity;
 
+import com.cehn17.spring.data.jpa.productDetail.infrastructure.ProductDetailEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +17,10 @@ public class ProductEntity {
     private String description;
     private Double price;
     private String image;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_detail_id")
+    private ProductDetailEntity productDetailEntity;
 
 }
 

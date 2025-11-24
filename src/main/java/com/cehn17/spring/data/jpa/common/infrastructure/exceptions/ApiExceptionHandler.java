@@ -1,4 +1,4 @@
-package com.cehn17.spring.data.jpa.common.infrastructure.config.exceptions;
+package com.cehn17.spring.data.jpa.common.infrastructure.exceptions;
 
 import com.cehn17.spring.data.jpa.product.domain.exception.ProductNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;

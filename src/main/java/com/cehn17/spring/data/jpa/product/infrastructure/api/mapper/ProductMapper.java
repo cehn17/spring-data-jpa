@@ -7,6 +7,7 @@ import com.cehn17.spring.data.jpa.product.infrastructure.api.dto.CreateProductDt
 import com.cehn17.spring.data.jpa.product.infrastructure.api.dto.ProductDto;
 import com.cehn17.spring.data.jpa.product.infrastructure.api.dto.UpdateProductDto;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ReportingPolicy;
 
@@ -17,5 +18,6 @@ public interface ProductMapper {
 
     UpdateProductRequest mapToUpdateProductRequest(UpdateProductDto updateProductDto);
 
+    @Mapping(target = "provider", source = "product.productDetail.provider")
     ProductDto mapToProductDto(Product product);
 }

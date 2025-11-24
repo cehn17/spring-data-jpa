@@ -6,7 +6,7 @@ import com.cehn17.spring.data.jpa.product.domain.entity.Product;
 import com.cehn17.spring.data.jpa.product.domain.entity.ProductFilter;
 import com.cehn17.spring.data.jpa.product.domain.port.ProductRepository;
 import com.cehn17.spring.data.jpa.product.infrastructure.database.entity.ProductEntity;
-import com.cehn17.spring.data.jpa.product.infrastructure.database.entity.ProductSpecification;
+import com.cehn17.spring.data.jpa.product.infrastructure.database.specification.ProductSpecification;
 import com.cehn17.spring.data.jpa.product.infrastructure.database.mapper.ProductEntityMapper;
 import com.cehn17.spring.data.jpa.product.infrastructure.database.repository.QueryProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Repository

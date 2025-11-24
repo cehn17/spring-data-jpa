@@ -1,5 +1,6 @@
-package com.cehn17.spring.data.jpa.product.infrastructure.database.entity;
+package com.cehn17.spring.data.jpa.product.infrastructure.database.specification;
 
+import com.cehn17.spring.data.jpa.product.infrastructure.database.entity.ProductEntity;
 import org.springframework.data.jpa.domain.Specification;
 
 public class ProductSpecification {
