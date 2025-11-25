@@ -1,8 +1,12 @@
 package com.cehn17.spring.data.jpa.product.infrastructure.database.entity;
 
 import com.cehn17.spring.data.jpa.productDetail.infrastructure.ProductDetailEntity;
+import com.cehn17.spring.data.jpa.review.infrastructure.ReviewEntity;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name ="products")
@@ -21,6 +25,9 @@ public class ProductEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_detail_id")
     private ProductDetailEntity productDetailEntity;
+
+    @OneToMany(mappedBy = "productEntity")
+    private List<ReviewEntity> reviews = new ArrayList<>();
 
 }
 

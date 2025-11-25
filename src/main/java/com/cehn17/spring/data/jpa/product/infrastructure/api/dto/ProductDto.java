@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.List;
+
 @Data
 public class ProductDto {
 
@@ -16,4 +18,6 @@ public class ProductDto {
     private String image;
 
     private String provider;
+
+    private List<ReviewDto> reviews;
 }
