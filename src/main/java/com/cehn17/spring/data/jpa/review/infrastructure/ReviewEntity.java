@@ -17,5 +17,5 @@ public class ReviewEntity {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private ProductEntity productEntity;
+    private ProductEntity product;
 }

@@ -8,16 +8,17 @@ import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Data
 public class CreateProductDto {
 
     @NotBlank
     private String name;
-    @Length(min = 10 , max = 255, message = "La descripción debe ser entre 10 y 255 caracteres")
+    @Length(min = 10, max = 255, message = "Description must be between 10 and 255 characters")
     private String description;
     @DecimalMin(value = "0.01", inclusive = false)
     @DecimalMax(value = "999.99", inclusive = false)
     private Double price;
-
     private MultipartFile file;
 }

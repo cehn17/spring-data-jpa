@@ -36,7 +36,7 @@ public interface QueryProductRepository extends JpaRepository<ProductEntity, Lon
 
     Page<ProductEntity> findAll(Specification<ProductEntity> specification, Pageable pageable);
 
-    @EntityGraph(attributePaths = {"productDetailEntity", "reviews"})
+    @EntityGraph(attributePaths = {"productDetail", "reviews", "categories"})
     Optional<ProductEntity> findById(Long id);
 
 }

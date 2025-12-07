@@ -20,4 +20,6 @@ public class ProductDto {
     private String provider;
 
     private List<ReviewDto> reviews;
+
+    private List<String> categories;
 }
