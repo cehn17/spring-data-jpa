@@ -8,6 +8,7 @@ import com.cehn17.spring.data.jpa.product.domain.entity.Product;
 import com.cehn17.spring.data.jpa.product.domain.exception.ProductNotFoundException;
 import com.cehn17.spring.data.jpa.product.domain.port.ProductRepository;
 import com.cehn17.spring.data.jpa.productDetail.domain.ProductDetail;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+@Transactional(rollbackOn = Exception.class)
 public class UpdateProductHandler implements RequestHandler<UpdateProductRequest,Void> {
 
     private final ProductRepository productRepository;
@@ -41,6 +43,8 @@ public class UpdateProductHandler implements RequestHandler<UpdateProductRequest
         product.getCategories().add(category);
 
         productRepository.upsert(product);
+
+        if(product.getId() == 5) throw new RuntimeException("Error updating product");
 
         log.info("Updated product with id {}", request.getId());
 
