@@ -13,6 +13,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
+@Profile("!test")
 public class CategorySeeder implements CommandLineRunner {
 
     private final QueryCategoryRepository queryCategoryRepository;

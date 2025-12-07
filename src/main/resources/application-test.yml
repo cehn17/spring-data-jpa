@@ -1,4 +1,22 @@
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_it
+    username: root
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: true
+  sql:
+    init:
+      mode: never
   servlet:
     multipart:
       max-request-size: 10MB
@@ -8,7 +26,7 @@ spring:
 
 springdoc:
   swagger-ui:
-    path: swagger-ui.html
+    path: /swagger-ui.html
 
 management:
   endpoints:
